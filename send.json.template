@@ -1,0 +1,9 @@
+{
+  "list": [{
+    "name": "zet",
+    "command": "sudo apt update && sudo apt upgrade && sudo apt autoremove"
+  }, {
+    "name": "htpc",
+    "command": "ssh -t -i ~/.ssh/second root@htpc \"apt upgrade && apt autoremove\""
+  }]
+}
