@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
+"""
+Requirements:
+  sudo apt install libnotify-bin
+"""
+
 import json
+import os
 import subprocess
 from termcolor import colored
 
@@ -34,6 +40,7 @@ def parse(data):
                 colored(item["name"], "green"),
                 colored(item["status"], "yellow"),
             ))
+            os.system("notify-send {} done".format(item["name"]))
             input(colored(
                 "Press ENTER to continue...",
                 "green",
