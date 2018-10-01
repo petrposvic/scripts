@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Requirements:
+  sudo apt install python3-pip
+  pip3 install termcolor
+"""
 
 """
 Requirements:
