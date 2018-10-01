@@ -1,0 +1,8 @@
+# Copy to pushbullet-sms-config.sh and fill credentials
+
+# Private and universal access token
+ACCESS_TOKEN="Create on https://www.pushbullet.com/#settings/account"
+
+USER="user_iden"
+DEVICE="device_iden"
+
