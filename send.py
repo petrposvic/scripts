@@ -45,7 +45,7 @@ def parse(data):
                 colored(item["name"], "green"),
                 colored(item["status"], "yellow"),
             ))
-            os.system("notify-send {} done".format(item["name"]))
+            os.system("notify-send -u critical {} done".format(item["name"]))
             input(colored(
                 "Press ENTER to continue...",
                 "green",
