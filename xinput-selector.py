@@ -9,7 +9,10 @@ def choose_dev():
         "type": "list",
         "name": "dev",
         "message": "Select device:",
-        "choices": [],
+        "choices": [{
+            "name": "Exit",
+            "value": "None",
+        }],
     }]
     with subprocess.Popen(
         "xinput list".split(),
@@ -33,7 +36,10 @@ def choose_prop(dev):
         "type": "list",
         "name": "prop",
         "message": "Select property:",
-        "choices": [],
+        "choices": [{
+            "name": "Back",
+            "value": "None",
+        }],
     }]
     with subprocess.Popen(
         "xinput list-props {}".format(dev).split(),
@@ -86,6 +92,21 @@ def enter_val(dev, prop):
                 print(line)
 
 
-dev = choose_dev()
-prop = choose_prop(dev)
-enter_val(dev, prop)
+def property_screen(dev):
+    while True:
+        prop = choose_prop(dev)
+        if prop == "None":
+            return
+        enter_val(dev, prop)
+
+
+def device_screen():
+    while True:
+        dev = choose_dev()
+        if dev == "None":
+            return
+        property_screen(dev)
+
+
+if __name__ == "__main__":
+    device_screen()
