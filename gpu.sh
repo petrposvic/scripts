@@ -99,5 +99,6 @@ fi
 # Manual select if need
 # sudo update-glx --config glx
 
-echo "Update GLX library"
-sudo update-glx --set glx $GLX
+#echo "Update GLX library"
+#sudo update-glx --set glx $GLX
+glxinfo|egrep "OpenGL vendor|OpenGL renderer*"
