@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CSRF_TOKEN="xxx"
+
+ZM_AUTH_TOKEN="yyy"
+
+IDENTITY_ID="zzz"
+
+SERVER_URL="https://zimbra.company.com"
