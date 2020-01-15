@@ -3,12 +3,21 @@
 SCRIPT_DIR="$(dirname $(readlink -f $0))"
 . "$SCRIPT_DIR/zimbra-nosig-config.sh"
 
+# Get ZM_AUTH_TOKEN
+HEADERS=`curl -sSL --user "$USERNAME:$PASSWORD" -D - "$SERVER_URL/home/$USERNAME/Inbox/?fmt=sync&auth=sc" -o /dev/null`
+PATTERN="Set-Cookie: ZM_AUTH_TOKEN=([^;]+)"
+if [[ "$HEADERS" =~ $PATTERN ]]; then
+  ZM_AUTH_TOKEN=${BASH_REMATCH[1]}
+else
+  echo "Can't get ZM_AUTH_TOKEN!"
+  exit 1
+fi
+
 PAYLOAD="$(cat <<- END
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
   <soap:Header>
     <context xmlns="urn:zimbra">
       <format type="js"/>
-      <csrfToken>$CSRF_TOKEN</csrfToken>
     </context>
   </soap:Header>
   <soap:Body>

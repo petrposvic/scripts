@@ -1,9 +1,6 @@
 #!/bin/bash
 
-CSRF_TOKEN="xxx"
-
-ZM_AUTH_TOKEN="yyy"
-
-IDENTITY_ID="zzz"
-
 SERVER_URL="https://zimbra.company.com"
+USERNAME="username"
+PASSWORD="password"
+IDENTITY_ID="" # Get from Chrome Dev Tools -> Networking -> some request
