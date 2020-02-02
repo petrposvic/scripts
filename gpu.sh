@@ -47,6 +47,10 @@ XINIT='# '$GEN_MSG'
 
 xrandr --setprovideroutputsource 1 0
 xrandr --output '$OUTPUT1' --auto --output '$OUTPUT2' --auto --above '$OUTPUT1'
+
+# Export DISPLAY
+systemctl --user import-environment DISPLAY
+
 i3'
 
 if [ $# -ne 1 ]; then
