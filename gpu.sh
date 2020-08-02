@@ -4,6 +4,7 @@
 
 OUTPUT1="eDP-1-1"
 OUTPUT2="HDMI-0"
+OUTPUT3="DP-1-1-2"
 
 X11_CONF=/etc/X11/xorg.conf.d/20-current.conf
 X11_INIT=~/.xinitrc
@@ -46,7 +47,10 @@ EndSection'
 XINIT='# '$GEN_MSG'
 
 xrandr --setprovideroutputsource 1 0
-xrandr --output '$OUTPUT1' --auto --output '$OUTPUT2' --auto --above '$OUTPUT1'
+xrandr \
+  --output '$OUTPUT1' --auto \
+  --output '$OUTPUT2' --auto --above '$OUTPUT1' \
+  --output '$OUTPUT3' --auto --below '$OUTPUT1'
 
 # Export DISPLAY
 systemctl --user import-environment DISPLAY
