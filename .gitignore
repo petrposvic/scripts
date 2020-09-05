@@ -1,4 +1,5 @@
 *.swp
+diff-web/
 pushbullet-sms-config.sh
 send.json
 zimbra-nosig-config.sh
