@@ -16,7 +16,7 @@ while true; do
   ping -q -c 1 -W 5 8.8.8.8 > /dev/null
   if [ $? -eq 0 ]; then
     echo "Network available!"
-    notify-send "ping-alert" "network available"
+    notify-send -u critical "ping-alert" "network available"
     break
   fi
   sleep 5
