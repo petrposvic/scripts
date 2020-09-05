@@ -11,6 +11,6 @@ if [ $# -gt 1 ]; then
   exit 1
 fi
 
-LAST_FILENAME=`find $DIR -maxdepth 1 -type f -name "*.jpg" -printf '%T@ %p\n' | sort -k1,1nr | head -1 | cut -d' ' -f2`
+LAST_FILENAME=`find $DIR -maxdepth 1 -type f -name "*.jpg" -printf '%T@ %p\n' | sort -k1,1nr | head -1 | cut -d' ' -f2-`
 echo "Opening file '$LAST_FILENAME'"
-gimp $LAST_FILENAME
+gimp "$LAST_FILENAME"
