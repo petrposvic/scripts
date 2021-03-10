@@ -1,5 +1,6 @@
 *.swp
 diff-web/
+microphone.json
 pushbullet-sms-config.sh
 send.json
 zimbra-nosig-config.sh
